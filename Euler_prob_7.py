@@ -1,8 +1,24 @@
-10,001st prime
+# 10,001st prime
+#
+# Problem 7
+#
+# By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, 
+# we can see that the 6th prime is 13
+#
+# What is the 10001st prime number?
 
-Problem 7
+import logging
 
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, 
-we can see that the 6th prime is 13
+#configure logger
+logging.basicConfig(
+    filename="Ep7.log",
+    level=logging.DEBUG,
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
 
-What is the 10001st prime number?
+def main():
+    return
+
+if __name__ == "__main__":
+    main()
