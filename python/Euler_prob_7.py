@@ -17,16 +17,29 @@ logging.basicConfig(
     datefmt="%Y-%m-%d %H:%M:%S"
 )
 
-def prime(num):
+def prime(amt):
+    primes = [2]
+    num = 3
 
-    for x in range(2,num):
-        if num % x != 0:
-            return False
+    while amt > len(primes):
+        sqrtNum = num ** 0.5
+        for factor in primes:
+            if num % factor == 0:
+                break
+            if factor > sqrtNum:
+                primes.append(num)
+                break
+        num += 1
     
-    return True
+    return primes
 
 def main():
-    print(prime(5))
+    try:
+        amt = int(input("Enter an amount of primes to return:"))
+        primes = prime(amt)
+        print(primes.pop())
+    except Exception as e:
+        logging.debug(f"exception occurred {e}")
     return
 
 if __name__ == "__main__":
